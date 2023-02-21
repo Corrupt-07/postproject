@@ -83,6 +83,10 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get("/", (req, res) => {
+    res.render("login", { btn1: "Login", btn2: "Sign Up For Free" });
+})
+
 app.get("/index", auth, async (req, res) => {
     try {
         const allData = await Post.find().sort('-date');
