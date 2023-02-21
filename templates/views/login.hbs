@@ -10,9 +10,8 @@
 
   <div class="vh-100" style="background-color: #9A616D;">
     <div class="container py-5 h-100">
+
       <div class="d-flex justify-content-center align-items-center ">
-
-
         <div class="col col-xl-10 ">
           <div class="card mt-4" style="border-radius: 1rem;">
             <div class="row">
@@ -28,12 +27,12 @@
                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
 
                     <div class="form-outline mb-4">
-                      <input type="email" id="form2Example17" class="form-control form-control-lg" name="email"/>
+                      <input type="email" id="form2Example17" class="form-control form-control-lg" name="email" />
 
                     </div>
 
                     <div class="form-outline mb-4">
-                      <input type="password" id="form2Example27" class="form-control form-control-lg" name="password"/>
+                      <input type="password" id="form2Example27" class="form-control form-control-lg" name="password" />
                     </div>
 
                     <div class="pt-1 mb-4">
@@ -41,7 +40,11 @@
                     </div>
                     <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="register"
                         style="color: #393f81;">Register here</a></p>
-
+                    {{#if message}}
+                    <div class="alert alert-danger">{{message}}</div>
+                    {{else if loginError}}
+                    <div class="alert alert-danger">{{loginError}}</div>
+                    {{/if}}
 
                   </form>
                 </div>

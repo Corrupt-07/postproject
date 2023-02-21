@@ -20,7 +20,12 @@
                             </div>
                             <div class="col-xl-6">
                                 <div class="card-body p-md-5 text-black">
-                                    <h3 class="mb-5 text-uppercase">Registration form</h3>
+                                     {{#if passwordError}}
+                                        <div class="alert alert-danger">{{passwordError}}</div>
+                                        {{else}}
+                                        <h3 class="mb-5 text-uppercase">Registration form</h3>
+                                        {{/if}}
+                                    
                                     <form action="/register" method="post">
                                         <div class="row">
                                             <div class="col-md-6 mb-4">
@@ -74,7 +79,8 @@
                                                 <div class="form-outline">
                                                     <input type="text" id="form3Example1n"
                                                         class="form-control form-control-lg" name="repassword" />
-                                                    <label class="form-label" for="form3Example1n">Re-Type Password</label>
+                                                    <label class="form-label" for="form3Example1n">Re-Type
+                                                        Password</label>
                                                 </div>
                                             </div>
                                         </div>
